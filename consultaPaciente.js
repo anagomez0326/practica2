@@ -1,6 +1,6 @@
-let pacienteId = '1214746162'
+let pacienteId = 'desdeApi'
 
-axios.get('http://161.35.110.128/api/v1/paciente/'+pacienteId)
+axios.get('http://161.35.110.128/api/v1/paciente/'+ pacienteId)
 .then (function (response) {
     // handle success
     console.log(response);

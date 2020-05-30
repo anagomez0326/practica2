@@ -1,47 +1,41 @@
 console.info("Load service script")
 console.info(axios)
 
-//Traer imagen
+function enviar(){
+    var user = document.getElementById("user").value;
+    var password = document.getElementById("password").value;
+        
+}
 
-//Login
+console.log(user)
+console.log(password)
+
 let url = "http://161.35.110.128/api/v1/login/access-token"
 const requestBody = {
-    username: 'grupo1',
-    password: 'grupo12019',
+  username: user,
+  password: password,
 }
-const config ={
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
-    }
 
+const config = {
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
 }
 
 axios({
     method: 'post',
     url: url,
     data: Qs.stringify({
-        username: 'grupo1',
-        password: 'grupo12019'
+      username: user,
+      password: password
     }),
-    headers:{
-        'content-type': 'application/x-www-form-urlencoded; charset=uft-8'
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     }
-}).then(response =>{
-    localStorage.setItem("token",response.data.access_token)
-})
-
-
-let pacienteId = 'desdeApi'
-
-axios.get('http://161.35.110.128/api/v1/paciente/'+ pacienteId)
-.then (function (response) {
-    // handle success
-    console.log(response);
-    console.log(response.data)
-    let data = response.data
-    let imagen = document.getElementById("mi_imagen")
-    imagen.src = data.url
-    let alerta = document.getElementById("alert")
-    alerta.style.display = "none"
-}) 
+  }).then(response=>{
+      console.log(response)
+      localStorage.setItem("token", response.data.access_token)
+      localStorage.setItem("status",response.statusText)
+    
+   })
 

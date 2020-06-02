@@ -22,14 +22,16 @@
                 <input type="submit" value="Consultar">                 
                    <!-- <button type="submit" class="btn btn-primary" onclick= "consultar()"></i>Consultar</button> -->
                </form>
-            <div class="datos-paciente">
-
-
-            </div>
-               
+            <div class="datos-paciente" onload="Consulta()">
+                <h3>Datos Paciente</h3> <br> <br>
+                <h3>Nombre: <span id="nombre"></span></h3>
+                <h3>Documento de identidad: <span id="custom_id"></span></h3>
+                <!--h3>EPS: <span id="eps"></span></h3-->
+                <h3>Edad: <span id="edad"></span></h3>
+            </div>               
            </div>
-           <div class="imagen">
-              <img src="link imagen">           
+           <div class="imagen" onload="Consulta()">
+              <img src="link imagen">            
            </div>
            </div> 
            

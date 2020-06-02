@@ -1,41 +1,50 @@
 console.info("Load service script")
 console.info(axios)
 
-function enviar(){
-    var user = document.getElementById("user").value;
-    var password = document.getElementById("password").value;
-        
+window.onload=cargarEventos;
+
+function cargarEventos(){
+  document.getElementById('datos-ingreso').addEventListener("submit", Ingreso, false);
 }
 
-console.log(user)
-console.log(password)
+function Ingreso(event){
+  event.preventDefault();
+  var usuario = document.getElementById("user").value;
+  var contrasena = document.getElementById("password").value;
 
-let url = "http://161.35.110.128/api/v1/login/access-token"
-const requestBody = {
-  username: user,
-  password: password,
-}
+  var user = {username: usuario, password: contrasena};
+  let url = "http://161.35.110.128/api/v1/login/access-token"
 
-const config = {
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
+  const requestBody = user;
+  const config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   }
-}
 
-axios({
+  axios({
     method: 'post',
     url: url,
-    data: Qs.stringify({
-      username: user,
-      password: password
-    }),
+    data: Qs.stringify(user),
     headers: {
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     }
   }).then(response=>{
-      console.log(response)
+      
       localStorage.setItem("token", response.data.access_token)
-      localStorage.setItem("status",response.statusText)
-    
+      localStorage.setItem("status",response.statusText)  
+      if (localStorage.getItem("status")=="OK"){
+        location.href = 'menu.html'
+      }         
    })
+
+
+}
+
+
+
+
+
+
+  
 

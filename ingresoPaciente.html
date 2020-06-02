@@ -8,25 +8,30 @@
         <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <!-- custom styling for all icons -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        ><link rel="stylesheet" href="static/css/ingresoPaciente.css">
+        <!-- <link rel="stylesheet" href="static/css/ingresoPaciente.css"> -->
     </head>
     <body>
-        <div id="main-content">
-         <div class="contenedor-inputs" id="texto">
-            <form>
+        <div class="main-content">
+         <div class="contenedor-inputs" >
+            <form id="datos">
+                <div class="form-group">
                 <h3 class="form__subtitulo">INGRESO DE PACIENTE</h3> <br> <br>
                 <input type="text" id="id" placeholder="Documento de identidad" class="forma-control">
-                <br>
+                </div>
+                <div class="form-group">
                 <input type="text" id="nombre" placeholder="Nombre" class="forma-control">
-                <br>
+                </div>
+                <div class="form-group">
                 <input type="text" id="edad" placeholder="Edad en años" class="forma-control">
-                <br>
+                </div>
+                <div class="form-group">
                 <select id="genero" >
                     <option value="0">Género...</option>
                     <option value="h">Hombre</option>
                     <option value="f">Mujer</option>
                 </select>            
-                <br>
+                </div>
+                <div class="form-group">
                 <select id="eps" >
                     <option value="0">EPS...</option>
                     <option value="Ips UdeA">Ips UdeA</option>
@@ -35,12 +40,18 @@
                     <option value="Cruz blanca">Cruz blanca</option>
                     <option value="Medimas">Medimas</option>
                 </select>
+                </div>
                 <br>
-                <button><button type="submit" class="btn btn-primary" onclick= "registrar()"></i> Registrar</button>
+                <input type="submit" value="Registrar">
+                <!-- <button type="submit" class="btn btn-primary" onclick= "registrar()"></i> Registrar</button> -->
             </form>
         </div>
-        <div id="imagen">
-            <h1>Ingrese imagen</h1>
+        <div class="imagen">
+            <form action="" id="form_img" enctype="multipart/form-data">
+                <div class="acciones">
+                    <input type="submit" class="btn" value="Enviar"/>
+                </div>
+            </form>            
         </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.js"></script>

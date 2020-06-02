@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Inicio</title>
+        <title>Ingreso de Paciente</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
         <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <!-- custom styling for all icons -->
@@ -16,6 +16,10 @@
             <form id="datos">
                 <div class="form-group">
                 <h3 class="form__subtitulo">INGRESO DE PACIENTE</h3> <br> <br>
+        <div id="main-content">
+         <div class="contenedor-inputs" id="texto">
+            <form id="datos">
+                <h1 class="form__subtitulo">INGRESO DE PACIENTE</h1>
                 <input type="text" id="id" placeholder="Documento de identidad" class="forma-control">
                 </div>
                 <div class="form-group">
@@ -26,6 +30,8 @@
                 </div>
                 <div class="form-group">
                 <select id="genero" >
+                <br>
+                <select id="genero" class="forma-control">
                     <option value="0">Género...</option>
                     <option value="h">Hombre</option>
                     <option value="f">Mujer</option>
@@ -33,6 +39,8 @@
                 </div>
                 <div class="form-group">
                 <select id="eps" >
+                <br>
+                <select id="eps" class="forma-control">
                     <option value="0">EPS...</option>
                     <option value="Ips UdeA">Ips UdeA</option>
                     <option value="Coomeva">Coomeva</option>
@@ -52,6 +60,15 @@
                     <input type="submit" class="btn" value="Enviar"/>
                 </div>
             </form>            
+                <input type="text" id="Telefono" placeholder="Telefono (celular)" class="forma-control">
+                <br>
+                <input type="text" id="Dirección" placeholder="Dirección de vivienda" class="forma-control">
+                <br>
+                <button type="submit" class="btn btn-outline-light" onclick= "registrar()"></i> Registrar</button>
+            </form>
+        </div>
+        <div id="imagen">
+            <h1>Ingrese imagen asociada al paciente</h1>
         </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.js"></script>

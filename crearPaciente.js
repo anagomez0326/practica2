@@ -10,7 +10,7 @@ function SubirImagen(){
     var FR= new FileReader();    
     FR.addEventListener("load", function(e) {
       console.log(e);
-      document.getElementById("img").src       = e.target.result;
+      document.getElementById("img").src= e.target.result;
       // document.getElementById("b64").innerHTML = e.target.result;
       
     });     
@@ -42,6 +42,7 @@ function Registro(event){
         }
         }).then(response=>{
             console.log(response)
+            console.log(imagen)
     });
 }
 

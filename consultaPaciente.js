@@ -11,6 +11,7 @@ function Consulta(event){
     axios.get('http://161.35.110.128/api/v1/paciente/'+ idConsulta)
     .then (function (response) {
         // handle success
+        //if (response.data == '[]') {console.log("Sin registro")};
         console.log(response.data);
         
         var nombre_data = response.data.name;

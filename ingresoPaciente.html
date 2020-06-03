@@ -3,43 +3,69 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>SISTEMA DE IMAGENES</title>
+        <title>Ingreso de Paciente</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
         <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <!-- custom styling for all icons -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" href="static/css/consultarpaciente.css">
+        <link rel="stylesheet" href="static/css/ingresoPaciente.css">
     </head>
     <body>
         <div class="main-content">
-            <div class="contenedor-inputs" >
-               <form id="dato-id">
+         <div class="contenedor-inputs" id = "texto">
+            <form id="datos">
+                <fieldset>
+                <h1 class="form__subtitulo">INGRESO DE PACIENTE</h1> 
                 <div class="form-group">
-                   <h1 class="form__subtitulo">CONSULTA DE PACIENTE</h1> 
-                   <input type="text" id="id-consulta" placeholder="Documento de identidad" class="forma-control">
-                </div> 
-                <input type="submit" class= "btn btn-outline-light" value="Consultar">                 
-               </form>
-               <br> <br> 
-                <div class="datos-paciente" onload="Consulta()">
-                    <h3>DATOS DEL PACIENTE</h3> 
-                    <h4>Nombres y Apellidos: <span id="nombre"></span></h4>
-                    <h4>Documento de identidad: <span id="custom_id"></span></h4>
-                    <h4>Género: <span id="genero"></span></h4>
-                    <h4>Edad: <span id="edad"></span></h4>
-                    <h4>EPS: <span id="eps"></span></h4>
-                </div>               
-           </div>
+                <input required type="text" id="id" placeholder="Documento de identidad" class="forma-control">
+                </div>
+                <div class="form-group">
+                <input required type="text" id="nombre" placeholder="Nombres y Apellidos" class="forma-control">
+                </div>
+                <div class="form-group">
+                <input required type="text" id="edad" placeholder="Edad en años" class="forma-control">
+                </div>
+                <div class ="form-group">
+                <input required type="text" id="telefono" placeholder="Telefono (celular)" class="forma-control">
+                </div>
+                <div class="form-group">
+                <input required type="text" id="dirección" placeholder="Dirección de vivienda" class="forma-control">
+                </div>
+                <div class="form-group">
+                <select required id="genero" >
+                    <option value="0" class = "texto">Género...</option>
+                    <option value="h" class = "texto">Hombre</option>
+                    <option value="f" class = "texto">Mujer</option>
+                </select>            
+                </div>
+                <div class="form-group">
+                <select required id="eps" >
+                    <option value="0" class = "texto">EPS...</option>
+                    <option value="Ips UdeA" class = "texto">Ips UdeA</option>
+                    <option value="Coomeva" class = "texto">Coomeva</option>
+                    <option value="Sura" class = "texto">Sura</option>
+                    <option value="Cruz blanca" class = "texto">Cruz blanca</option>
+                    <option value="Medimas" class = "texto">Medimas</option>
+                </select>
+                </div>
+                <br>
+                <input type="submit" class= "btn btn-outline-light" value="Registrar">
+            </fieldset>
+            </form>
         </div>
-           <div class="imagen" onload="Consulta()">
-                <img id="img" width="100%" height="320">           
-           </div>
-           
-           <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.js"></script>
-           <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-           <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script src="consultaPaciente.js"></script> 
+        <div class="imagen">
+            <form action="" id="form_img" enctype="multipart/form-data">
+                <input type="file" id="imagen"/>                
+                <img id="img" width="100%" height="320">
+                <!-- <input type="submit" class= "btn btn-outline-light" value="Subir"> -->
+            </form>            
+        </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="crearPaciente.js"></script> 
     </body>
 </html>

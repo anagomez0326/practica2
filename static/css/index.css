@@ -37,9 +37,13 @@ body{
     border-radius: 5px;
 }
 .forgot{
-    margin-top: 10%;
-    padding: 10% 0;
+    margin-top: 0%;
+    padding: 5% 0;
+    
+}
+a{
     color: white;
+
 }
 .btn{
     margin-top: 3%;

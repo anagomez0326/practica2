@@ -48,17 +48,17 @@ body{
 
 .form-group#nombre-group::before{
     margin-top: 0%;
-    margin-bottom: 1%;
+    margin-bottom: 0%;
     content: "\f007";
 }
 .form-group#email-group::before{
     margin-top: 0%;
-    margin-bottom: 1%;
+    margin-bottom: 0%;
     content: "\f0e0";
 }
 .form-group#telefono-group::before{
     margin-top: 0%;
-    margin-bottom: 1%;
+    margin-bottom: 0%;
     content: "\f095";
 }
 .form-group#mensaje-group::before{

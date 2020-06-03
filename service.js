@@ -30,6 +30,7 @@ function Ingreso(event){
       'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
     }
   }).then(response=>{
+    console.log(response)
       localStorage.setItem("token", response.data.access_token)
       localStorage.setItem("status",response.statusText)  
       if (localStorage.getItem("status")=="OK"){

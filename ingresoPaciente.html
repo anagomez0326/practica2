@@ -8,50 +8,47 @@
         <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
         <!-- custom styling for all icons -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" href="static/css/ingresoPaciente.css"> -->
+        <link rel="stylesheet" href="static/css/ingresoPaciente.css">
     </head>
     <body>
         <div class="main-content">
-         <div class="contenedor-inputs" >
+         <div class="contenedor-inputs" id = "texto">
             <form id="datos">
+                <h1 class="form__subtitulo">INGRESO DE PACIENTE</h1> 
                 <div class="form-group">
-                <h3 class="form__subtitulo">INGRESO DE PACIENTE</h3> <br> <br>
-        <div id="main-content">
-         <div class="contenedor-inputs" id="texto">
-            <form id="datos">
-                <h1 class="form__subtitulo">INGRESO DE PACIENTE</h1>
                 <input type="text" id="id" placeholder="Documento de identidad" class="forma-control">
                 </div>
                 <div class="form-group">
-                <input type="text" id="nombre" placeholder="Nombre" class="forma-control">
+                <input type="text" id="nombre" placeholder="Nombres y Apellidos" class="forma-control">
                 </div>
                 <div class="form-group">
                 <input type="text" id="edad" placeholder="Edad en años" class="forma-control">
                 </div>
+                <div class ="form-group">
+                <input type="text" id="telefono" placeholder="Telefono (celular)" class="forma-control">
+                </div>
+                <div class="form-group">
+                <input type="text" id="dirección" placeholder="Dirección de vivienda" class="forma-control">
+                </div>
                 <div class="form-group">
                 <select id="genero" >
-                <br>
-                <select id="genero" class="forma-control">
-                    <option value="0">Género...</option>
-                    <option value="h">Hombre</option>
-                    <option value="f">Mujer</option>
+                    <option value="0" class = "texto">Género...</option>
+                    <option value="h" class = "texto">Hombre</option>
+                    <option value="f" class = "texto">Mujer</option>
                 </select>            
                 </div>
                 <div class="form-group">
                 <select id="eps" >
-                <br>
-                <select id="eps" class="forma-control">
-                    <option value="0">EPS...</option>
-                    <option value="Ips UdeA">Ips UdeA</option>
-                    <option value="Coomeva">Coomeva</option>
-                    <option value="Sura">Sura</option>
-                    <option value="Cruz blanca">Cruz blanca</option>
-                    <option value="Medimas">Medimas</option>
+                    <option value="0" class = "texto">EPS...</option>
+                    <option value="Ips UdeA" class = "texto">Ips UdeA</option>
+                    <option value="Coomeva" class = "texto">Coomeva</option>
+                    <option value="Sura" class = "texto">Sura</option>
+                    <option value="Cruz blanca" class = "texto">Cruz blanca</option>
+                    <option value="Medimas" class = "texto">Medimas</option>
                 </select>
                 </div>
                 <br>
-                <input type="submit" value="Registrar">
-                <!-- <button type="submit" class="btn btn-primary" onclick= "registrar()"></i> Registrar</button> -->
+                <input type="submit" class= "btn btn-outline-light" value="Registrar">
             </form>
         </div>
         <div class="imagen">
@@ -60,15 +57,6 @@
                     <input type="submit" class="btn" value="Enviar"/>
                 </div>
             </form>            
-                <input type="text" id="Telefono" placeholder="Telefono (celular)" class="forma-control">
-                <br>
-                <input type="text" id="Dirección" placeholder="Dirección de vivienda" class="forma-control">
-                <br>
-                <button type="submit" class="btn btn-outline-light" onclick= "registrar()"></i> Registrar</button>
-            </form>
-        </div>
-        <div id="imagen">
-            <h1>Ingrese imagen asociada al paciente</h1>
         </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.4/qs.js"></script>

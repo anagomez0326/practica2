@@ -49,10 +49,10 @@ function Ingreso(event){
       }         
    }).catch(error =>{
      if (error.response.status === 400) {
-      alert("Usuario y/o contraseña incorrectos. Intente ingresar nuevamente los datos. Si olvidó su contraseña seleccioné la opción '¿Olvidaste tu contraseña?' para reestablecerla");
+      alert("Usuario y/o contraseña incorrectos. Intente ingresar nuevamente los datos. Si olvidó su contraseña seleccioné la opción '¿Olvidaste tu contraseña?' para reestablecerla.");
      }
      else if (error.response.status === 422) {
-      alert("Usuario y/o contraseña incorrectos");}
+      alert("Usuario y/o contraseña incorrectos.");}
    })
 }
 

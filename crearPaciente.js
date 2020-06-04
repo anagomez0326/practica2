@@ -5,20 +5,11 @@ function cargarEventos(){
   document.getElementById('datos').addEventListener("submit", Registro, false);
 }
 
-function SubirImagen(){
-  if (this.files && this.files[0]) {    
-    var FR= new FileReader();    
-    FR.addEventListener("load", function(e) {
-      console.log(e);
-      document.getElementById("img").src= e.target.result;
-      // document.getElementById("b64").innerHTML = e.target.result;
-      
-    });     
-    FR.readAsDataURL( this.files[0] );
-  }
+function SubirImagen() {
+  var file    = document.querySelector('input[type=file]').files[0];  
+  var url = 'imagenes/'+file.name;
+  document.getElementById("img").src= url;
 }
-
-
 
 function Registro(event){
   event.preventDefault();
@@ -27,7 +18,7 @@ function Registro(event){
   var edad = document.getElementById("edad").value;
   var genero = document.getElementById("genero").value;
   var eps = document.getElementById("eps").value;
-  var imagen = document.getElementById("img").src;
+  var imagen = 'imagenes/'+document.querySelector('input[type=file]').files[0].name;
 
     var paciente ={"custom_id":id,"name":nombre,"age":edad,"b64":"string","image_url":imagen,"gender":genero,"eps":eps};
 
@@ -42,8 +33,21 @@ function Registro(event){
         }
         }).then(response=>{
             console.log(response)
-            console.log(imagen)
+            var estado = response.statusText
+            if(estado=='OK'){
+                var ventana = window.confirm("EL PACIENTE HA SIDO REGISTRADO")
+                if(ventana){
+                  document.getElementById("id").value ="";
+                  document.getElementById("nombre").value ="";
+                  document.getElementById("edad").value="";
+                  document.getElementById("genero").value="";
+                  document.getElementById("eps").value="";
+                  document.getElementById("img").src= "";
+                }
+            }
+            
     });
+
 }
 
 

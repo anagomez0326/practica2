@@ -10,9 +10,14 @@ function Consulta(event){
 
     axios.get('http://161.35.110.128/api/v1/paciente/'+ idConsulta)
     .then (function (response) {
+      
         // handle success
         //if (response.data == '[]') {console.log("Sin registro")};
         console.log(response.data);
+        if (response.data.length==0){
+            window.alert("EL USUARIO NO ESTA REGISTRADO")
+        }
+        else{
         
         var nombre_data = response.data.name;
         document.getElementById("nombre").innerHTML=nombre_data;
@@ -30,6 +35,8 @@ function Consulta(event){
         document.getElementById("edad").innerHTML=edad_data;
 
         var imagen_data = response.data.image_url;
-        document.getElementById("img").src = imagen_data;
+        console.log(imagen_data);
+        document.getElementById("img").src= imagen_data;
+        }
     })
 } 

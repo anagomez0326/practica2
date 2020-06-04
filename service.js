@@ -5,6 +5,16 @@ window.onload=cargarEventos;
 
 function cargarEventos(){
   document.getElementById('datos-ingreso').addEventListener("submit", Ingreso, false);
+  document.getElementById('consulta').addEventListener("click",EnviarContrasena,false);
+}
+
+function EnviarContrasena(event){
+    event.preventDefault();
+    var user = document.getElementById("user").value;
+    if(user.length==0){ 
+    }else{  
+      window.confirm("SU MENSAJE HA SIDO ENVIADO AL CORREO ELECTRONICO REGISTRADO")
+    }
 }
 
 function Ingreso(event){
@@ -32,9 +42,10 @@ function Ingreso(event){
   }).then(response=>{
     console.log(response)
       localStorage.setItem("token", response.data.access_token)
+      localStorage.setItem("nameusuario",usuario)
       localStorage.setItem("status",response.statusText)  
       if (localStorage.getItem("status")=="OK"){
-        location.href = 'menu.html'
+         location.href = 'menu.html'
       }         
    }).catch(error =>{
      if (error.response.status === 400) {

@@ -35,7 +35,7 @@ function Registro(event){
             console.log(response)
             var estado = response.statusText
             if(estado=='OK'){
-                var ventana = window.confirm("EL PACIENTE HA SIDO REGISTRADO")
+                var ventana = window.confirm("El paciente ha sido registrado con éxtio. Ahora puede ser consultado en la sección consulta. ")
                 if(ventana){
                   document.getElementById("id").value ="";
                   document.getElementById("nombre").value ="";

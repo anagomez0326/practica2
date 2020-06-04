@@ -13,7 +13,7 @@ function EnviarContrasena(event){
     var user = document.getElementById("user").value;
     if(user.length==0){ 
     }else{  
-      window.confirm("SU MENSAJE HA SIDO ENVIADO AL CORREO ELECTRONICO REGISTRADO")
+      window.confirm("Se ha enviado un mensaje a el correo electrónico con el que se registró, desde allí podrá reestablecer su contraseña.")
     }
 }
 
@@ -49,7 +49,7 @@ function Ingreso(event){
       }         
    }).catch(error =>{
      if (error.response.status === 400) {
-      alert("Usuario y/o contraseña incorrectos. Ingresa nuevamente los datos");
+      alert("Usuario y/o contraseña incorrectos. Intente ingresar nuevamente los datos. Si olvidó su contraseña seleccioné la opción '¿Olvidaste tu contraseña?' para reestablecerla");
      }
      else if (error.response.status === 422) {
       alert("Usuario y/o contraseña incorrectos");}

@@ -15,7 +15,7 @@ function Consulta(event){
         //if (response.data == '[]') {console.log("Sin registro")};
         console.log(response.data);
         if (response.data.length==0){
-            window.alert("EL USUARIO NO ESTA REGISTRADO")
+            window.alert("El id que acaba de ingresar no corresponde con el de ningún usuario registrado. Verifique el número ingresado e intente nuevamente.")
         }
         else{
         

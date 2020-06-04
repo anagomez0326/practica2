@@ -22,7 +22,7 @@ body{
     color: white;
     font-size: 150%;
     padding-top: 1%;
-    margin-top: -5%;
+    margin-top: 100px;
     margin-bottom:1%;
     margin-left: 1%;
     text-align: center;
@@ -36,10 +36,26 @@ header {
 header h1{
     font-weight: lighter;
     text-align: center;
-    color: white;
+    color: whitesmoke;
     font-size: 200%;
     line-height: 200%;
 }
+header h3{
+    font-weight: lighter;
+    text-align: left;
+    color: white;
+    font-size: 120%;
+    line-height: 1%;
+    margin-left: 4%;
+    margin-bottom: -2%
+}
+header button{
+    margin-right: 5%;
+    margin-left: 83.4%;
+    margin-bottom: 0%;
+    width: 12%;
+}
+
 nav{
     margin-top: 5%;
     margin-left: 3%;
@@ -105,8 +121,8 @@ footer h2{
     text-align: center;
     position: relative;
     margin-top: -5%;
-    margin-right: 33%;
-    margin-left: 33%;
+    margin-right: 30%;
+    margin-left: 28%;
     font-size: 100%;
     color:rgb(228, 222, 222);
 }
